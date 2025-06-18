@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 
 type ProductData = {
   name: string,
-  attributes: Object[]
+  attributes: any[]
 }
 
 function App() {
