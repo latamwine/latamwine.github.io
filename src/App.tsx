@@ -36,12 +36,10 @@ function App() {
   if (error) return <p>Error: {error}</p>
   if (!productData) return <p>No data found</p>
 
-  console.log(productData.attributes)
-
   return (
     <>
       <h2>{productData.name}</h2>
-      {productData.attributes.map(x => <p>{x.name}: {x.options[0]}</p>)}
+      {productData.attributes.map((x, i) => <p key={i}>{x.name}: {x.options[0]}</p>)}
     </>
   )
 }
