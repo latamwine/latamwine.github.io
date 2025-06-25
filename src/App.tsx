@@ -18,10 +18,6 @@ function ProductView({ data }: ProductProps) {
       document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
     setVh()
-    window.addEventListener('resize', setVh)
-    return () => {
-      window.removeEventListener('resize', setVh)
-    }
   }, [])
 
   const imageUrl = data.images[0].src
@@ -31,9 +27,9 @@ function ProductView({ data }: ProductProps) {
   })
 
   return <div style={{ width: "100vw", height: "200vh" }}>
-    <div style={{ width: "100vw", height: "calc(var(--vh, 1vh) * 100)", backgroundImage: 'url("background.png")' }}>
+    <div style={{ width: "100vw", height: "100vh", backgroundImage: 'url("background.png")' }}>
       <div style={{
-        backgroundColor: 'white', width: "calc(100vw - 6vw)", height: "calc(calc(var(--vh, 1vh) * 100) - 6vw)",
+        backgroundColor: 'white', width: "calc(100vw - 6vw)", height: "calc(100vh - 6vw)",
         position: "relative",
         top: "3vw",
         left: "3vw",
