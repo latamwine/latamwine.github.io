@@ -3,8 +3,25 @@ import "./App.css";
 import { useParams } from "react-router";
 
 type ProductData = {
-  name: string,
-  attributes: any[]
+  name: string;
+  attributes: any[];
+  images: any[];
+}
+type ProductProps = {
+  data: ProductData;
+}
+
+function ProductView({ data }: ProductProps) {
+  const imageUrl = data.images[0].src
+
+  return <div style={{ width: "100vw", height: "200vh" }}>
+    <div style={{ width: "100vw", height: "100vh", backgroundColor: "red" }}>
+      <div>
+        <img src={imageUrl} crossOrigin="anonymous" />
+      </div>
+    </div>
+    <h1>{data.name}</h1>
+  </div>
 }
 
 function App() {
@@ -36,12 +53,7 @@ function App() {
   if (error) return <p>Error: {error}</p>
   if (!productData) return <p>No data found</p>
 
-  return (
-    <>
-      <h2>{productData.name}</h2>
-      {productData.attributes.map((x, i) => <p key={i}>{x.name}: {x.options[0]}</p>)}
-    </>
-  )
+  return <ProductView data={productData} />
 }
 
 export default App;
