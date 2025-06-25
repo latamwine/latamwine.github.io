@@ -1,0 +1,27 @@
+p {
+  font-family: Lato;
+  font-weight: 300;
+}
+
+.main-heading {
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+.attribute-label {
+  font-style: italic;
+  font-size: 1.6em;
+  margin: 0;
+}
+
+.attribute-value {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2em;
+  margin: 0;
+}
+
+.mini-attribute {
+  font-size: 1.5em;
+  margin: 4vw;
+}
