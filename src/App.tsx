@@ -82,7 +82,7 @@ function App() {
   async function fetchProduct() {
     try {
       setLoading(true)
-      const res = await fetch(`https://latamwine.com/wp-json/wc/v3/products/${productId}`)
+      const res = await fetch(`https://importwin.pl/wp-json/wc/v3/products/${productId}`)
       if (!res.ok) throw new Error('Failed to fetch product')
       const data = await res.json()
       setProductData(data)
