@@ -27,21 +27,17 @@ function ProductView({ data }: ProductProps) {
   })
 
   return <div style={{ width: "100vw", height: "200vh" }}>
-    <div style={{ width: "100vw", height: "100vh", backgroundImage: 'url("background.png")' }}>
+    <div style={{ width: "100%", backgroundImage: 'url("background.png")', display: 'flex', justifyContent: 'center', paddingTop: "3vw", paddingBottom: "3vw" }}>
       <div style={{
-        backgroundColor: 'white', width: "calc(100vw - 6vw)", height: "calc(100vh - 6vw)",
-        position: "relative",
-        top: "3vw",
-        left: "3vw",
+        backgroundColor: 'white', width: "94vw",
         borderRadius: "5px"
       }}>
         <div style={{
-          width: "92%", height: "40%", display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "stretch", padding: "4%",
+          display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "stretch", lineHeight: 1.2
         }}>
           <img src={imageUrl} crossOrigin="anonymous" style={{
             objectFit: "cover",
-            width: "30%",
-            height: "100%",
+            width: "80%",
             paddingRight: "4%",
           }} />
           <div style={{
@@ -63,6 +59,7 @@ function ProductView({ data }: ProductProps) {
         <hr style={{ border: "none", height: "1px", backgroundColor: "#aaaaaa", width: "90%" }} />
         <p className="mini-attribute">Struktura - <span style={{ fontWeight: "bold" }}>{attributes.get("pa_struktura")}</span></p>
         <p className="mini-attribute">Aromaty - <span style={{ fontWeight: "bold" }}>{attributes.get("pa_aromaty")}</span></p>
+        <br></br>
         <p className="mini-attribute">Pasujo do:</p>
         {attributes.get("pa_pairings")?.split("|").map((x, i) =>
           <p className="mini-attribute">{i + 1}) {x}</p>
